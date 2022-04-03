@@ -140,7 +140,7 @@ nav a:hover{
     transition: transform 1s ease-in-out;
 }
 
-.showcase-form:h{
+.showcase-form:hover{
     transform: scale(90%);
 }
 
