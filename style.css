@@ -1,3 +1,5 @@
+
+/* full version seytech's website */
 /* Global Settings */
 
 *{
@@ -134,7 +136,9 @@ nav a:hover{
     z-index: 1;
     top: 60px;
     height: 350px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 250px;
     padding: 40px;
     animation: slide_F_right 1s ease;
     transition: transform 1s ease-in-out;
@@ -219,7 +223,7 @@ input:focus{
 }
 
 .grid-3{
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .stats .grid h3{
@@ -288,7 +292,7 @@ input:focus{
 }
 
 .footer{
-    padding: 2rem;
+    padding: 2rem 0;
     background-color:var(--dark);
     color: var(--light);
 }
@@ -315,10 +319,19 @@ input:focus{
 }
 
 @media(max-width: 768px){
-    .grid, .CLI .grid{
-        grid-template-columns: 1fr;
+
+    .navbar .container{
+        padding: 0 50px!important;
     }
 
+    .grid, .grid-3{
+        grid-template-columns: 1fr !important;
+    }
+    /* I don't know why !!! */
+    .CLI .card{
+        grid-column: 1;
+    }
+/* You need NOT ONLY to say that there should be 1fr one column, But ALSO to say that every/items which you give span, must be one column */
     .showcase .grid{
         grid-template-columns: 100%;
     }
@@ -332,10 +345,6 @@ input:focus{
         margin-top:50px;
     }
 
-    /* I don't know why !!! */
-    .CLI .card{
-        grid-column: 1;
-    }
     
     .cloud{
         padding: 2rem;
@@ -349,14 +358,19 @@ input:focus{
 @media(max-width: 500px){
     .navbar .flex{
         flex-direction: column;
-        position: relative;
-        z-index: 2;
+        justify-content: center;
+    }
+    .navbar{
+        height: 110px;
     }
     .navbar ul{
         padding: 5px;
         background-color: rgba(0, 0, 0, 0.2);
     }
     
+    .showcase .container{
+        padding-top:0!important;
+    }
     .showcase .showcase-form{
         width: 300px;
     }
